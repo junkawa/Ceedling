@@ -1,0 +1,4 @@
+---
+:kernel_module_test:
+  # x86, x86_64
+  :arch: x86_64
