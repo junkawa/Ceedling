@@ -21,6 +21,9 @@ class KernelModuleTest < Plugin
     when "x86_64" then
       arch_dir = "#{@plugin_root}/src/arch/x86_64/"
       arch_cflags="-DTEST -D\"UNITY_INT_WIDTH=32\" -D\"UNITY_LONG_WIDTH=64\""
+    when "arm" then
+      arch_dir = "#{@plugin_root}/src/arch/arm/"
+      arch_cflags="-DTEST -D\"UNITY_INT_WIDTH=32\" -D\"UNITY_LONG_WIDTH=32\""
     else
       configError
     end

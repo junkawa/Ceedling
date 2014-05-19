@@ -1,4 +1,4 @@
 ---
 :kernel_module_test:
-  # x86, x86_64
+  # x86, x86_64, arm
   :arch: x86_64
