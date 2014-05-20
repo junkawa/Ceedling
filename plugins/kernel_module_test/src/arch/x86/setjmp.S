@@ -19,11 +19,7 @@
 	.globl setjmp
 	.type setjmp, @function
 setjmp:
-#ifdef _REGPARM
 	movl %eax,%edx
-#else
-	movl 4(%esp),%edx
-#endif
 	popl %ecx			# Return address, and adjust the stack
 	xorl %eax,%eax			# Return value
 	movl %ebx,(%edx)
@@ -42,12 +38,7 @@ setjmp:
 	.globl longjmp
 	.type longjmp, @function
 longjmp:
-#ifdef _REGPARM
 	xchgl %eax,%edx
-#else
-	movl 4(%esp),%edx		# jmp_ptr address
-	movl 8(%esp),%eax		# Return value
-#endif
 	movl (%edx),%ebx
 	movl 4(%edx),%esp
 	movl 8(%edx),%ebp
